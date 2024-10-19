@@ -1,17 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"); /* Import Roboto font */
-@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap"); /* Import Pacifico font */
 
+/* Variables */
 :root {
 	--body-bg-color: #f44336;
 	--body-color: #f5f5f5;
 	--grid-border-color: #333333;
 	--grid-square-bg-color: #e6e6e6;
-	--title-color: #ffffff;
+	--title-color: #fdd835;
 	--button-bg-color: #ffffff;
 	--button-color: #222222;
-	--button-bg-hover-color: #f7f7f7;
+	--button-bg-hover-color: #fdd835;
+	--text-shadow-color: #000000;
 	--main-fonts: "Roboto", sans-serif;
-	--title-fonts: "Leckerli One", cursive;
+	--title-fonts: "Pacifico", cursive;
 	--main-line-height: 1.25;
 }
 
@@ -24,7 +26,7 @@
 body {
 	font-family: var(--main-fonts);
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 1em;
 	line-height: var(--main-line-height);
 	color: var(--body-color);
 	background-color: var(--body-bg-color);
@@ -32,28 +34,31 @@ body {
 
 h1 {
 	font-family: var(--title-fonts);
-	font-weight: 400;
-	font-style: normal;
-	font-size: 5em;
+	font-size: 4.5em;
 	line-height: var(--main-line-height);
 	color: var(--title-color);
 	text-align: center;
+	text-shadow: 2px 2px 4px var(--text-shadow-color);
 }
 
 button {
 	background-color: var(--button-bg-color);
 	color: var(--button-color);
 	font-weight: 600;
-	font-size: 1.25em;
+	font-size: 1.2em;
 	border: 0;
-	padding: 15px 30px;
-	border-radius: 5px;
+	padding: 15px 20px;
+	border-radius: 50px;
 	cursor: pointer;
 	display: block;
 }
 
 button:hover {
 	background-color: var(--button-bg-hover-color);
+}
+
+#game {
+	padding: 0 0 20px;
 }
 
 .title {
@@ -66,6 +71,10 @@ button:hover {
 	text-align: center;
 }
 
+.game-buttons-wrapper {
+	padding-bottom: 20px;
+}
+
 .game-buttons {
 	display: flex;
 	flex-direction: row;
@@ -75,14 +84,19 @@ button:hover {
 	gap: 20px;
 }
 
+.container-wrapper {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0;
+}
+
 .container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: 0 auto;
 	width: 100%;
-	max-width: 960px;
-	padding: 30px 0;
+	box-sizing: border-box;
 }
 
 .square {
@@ -94,14 +108,29 @@ button:hover {
 }
 
 /* Mobile Responsiveness */
+@media (min-width: 769px) and (max-width: 960px) {
+	.container-wrapper {
+		padding: 30px;
+	}
+}
+
 @media (max-width: 768px) {
 	h1 {
-		font-size: 4em;
+		font-size: 3.5em;
 	}
 
 	button {
-		font-size: 1.1em;
-		padding: 12px 25px;
+		padding: 12px 20px;
+	}
+
+	.game-buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.container-wrapper {
+		padding: 20px;
 	}
 }
 
@@ -119,7 +148,7 @@ button:hover {
 		gap: 10px;
 	}
 
-	.container {
-		padding: 15px 0;
+	.container-wrapper {
+		padding: 15px;
 	}
 }
