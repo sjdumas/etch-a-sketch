@@ -34,7 +34,7 @@ body {
 
 h1 {
 	font-family: var(--title-fonts);
-	font-size: 4.5em;
+	font-size: 4em;
 	line-height: var(--main-line-height);
 	color: var(--title-color);
 	text-align: center;
